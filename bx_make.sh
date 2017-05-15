@@ -80,8 +80,7 @@ a2ensite $project_name.conf
 #перезагружаем apache
 service apache2 reload 
 
-#TODO вынести и сделать чтобы работало)
-su fray
-google-chrome http://"$project_name".loc/"$start_script"
+#TODO вынести
+sudo -u fray google-chrome http://"$project_name".loc/"$start_script"
 
 exit 0 
