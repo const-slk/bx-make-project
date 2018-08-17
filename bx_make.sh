@@ -51,14 +51,14 @@ chown -R fray:fray "$project_path"
 
 #создаем запись в host
 #TODO вынести
-echo "127.0.0.1 $project_name.loc" >> /etc/hosts
+echo "127.0.0.1 $project_name.local" >> /etc/hosts
 
 #создаем conf файл
 #TODO вынести
 echo "
 <VirtualHost *:80>
 	ServerAdmin webmaster@localhost
-	ServerName $project_name.loc
+	ServerName $project_name.local
 
 	ErrorLog /home/fray/www/$project_name/error.log
 	CustomLog /home/fray/www/$project_name/access.log combined
@@ -81,6 +81,6 @@ a2ensite $project_name.conf
 service apache2 reload 
 
 #TODO вынести
-sudo -u fray google-chrome http://"$project_name".loc/"$start_script"
+sudo -u fray google-chrome http://"$project_name".local/"$start_script"
 
 exit 0 
